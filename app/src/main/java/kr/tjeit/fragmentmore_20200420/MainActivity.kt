@@ -21,6 +21,8 @@ class MainActivity : BaseActivity() {
     override fun setValues() {
         myViewPager.adapter = MyFragPagerAdapter(supportFragmentManager)
 
+        myViewPager.offscreenPageLimit = 5 //돌려막을 플래그먼트 갯수를 본래보다 크게 5개 지정
+
         myTabLayout.setupWithViewPager(myViewPager)
     }
 

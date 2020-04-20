@@ -14,7 +14,9 @@ class MyFragPagerAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
         return when(position) {
             0 -> "메인"
             1 -> "게임 리스트"
-            else -> "거래 게시판"
+            2 -> "게임 게시판"
+            3 -> "게임 목록"
+            else -> "게시판"
         }
     }
 
@@ -22,11 +24,13 @@ class MyFragPagerAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
         return when(position) {
             0 -> MainFragment()
             1 -> GameListFragment()
+            2 -> BoardFragment()
+            3 -> GameListFragment()
             else -> BoardFragment()
         }
     }
 
     override fun getCount(): Int {
-        return 3
+        return 5
     }
 }
