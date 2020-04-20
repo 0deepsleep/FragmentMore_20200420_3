@@ -35,14 +35,14 @@ class BoardFragment : BaseFragment() {
 
     override fun setValues() {
         mPostList.add(Post("삼성전자", 10, "조경진"))
-        mPostList.add(Post("신라젠", 500, "박보검"))
-        mPostList.add(Post("코오롱티슈진", 100, "서태지"))
-        mPostList.add(Post("테슬라", 5, "아이유"))
-        mPostList.add(Post("페이스북", 15, "박보영"))
-        mPostList.add(Post("스타벅스", 80, "조경진"))
-        mPostList.add(Post("LG전자", 20, "김민아"))
-        mPostList.add(Post("삼성증권", 2000, "장민철"))
-        mPostList.add(Post("스튜디오드래곤", 13, "차은우"))
+        mPostList.add(Post("신라젠", 500, "김김김"))
+        mPostList.add(Post("코오롱티슈진", 100000, "박박박"))
+        mPostList.add(Post("테슬라", 18, "이이이"))
+        mPostList.add(Post("페이스북", 1818, "조조조"))
+        mPostList.add(Post("스타벅스", 28, "최최최"))
+        mPostList.add(Post("LG전자", 19, "류류류"))
+        mPostList.add(Post("삼성증권", 2000, "지지지"))
+        mPostList.add(Post("스튜디오드래곤", 999999999, "차차차"))
 
         mPostAdapter = PostAdapter(mContext!!, R.layout.post_list_item, mPostList)
         boardListView.adapter = mPostAdapter

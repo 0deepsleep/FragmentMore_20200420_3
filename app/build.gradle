@@ -3,19 +3,27 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 29 // 안드로이드 어느 버전으로 앱 만드는지 설정 ,가능한 최신버전 유지
     buildToolsVersion "29.0.3"
 
     defaultConfig {
+        // applicationId : 플레이스토어에 등록되는 앱 고유의 ID값 (패키지명과 동일)
+        // => 만일 앱 패키지 이름 바군다면 이 항목도 바꿔야 함. 안그럼 에러 남
         applicationId "kr.tjeit.fragmentmore_20200420"
-        minSdkVersion 16
+        minSdkVersion 16 //지원가능 한 최저 버전 => 추가하려는 라이브러리에서 지원하지 못하면 그때 하나씩 올려가며 작업 (최대한 지원하고 하나씩 쳐내가자)
         targetSdkVersion 29
         versionCode 1
+        // versionCode : 1, 2, 3 등의 숫자로 지정하는 앱의 업데이트 횟수
+        //  => 업데이트 할 때 어떤  APK파일이 더 최신 APK인지 구별하는 용도의 숫자
+        //  => 만약 1을 스토어에 한번 올리면 다시는 1버전을 올릴 수 없음, 다시 1씩 증가하여 올려야 함
         versionName "1.0"
+        // versionName : 1.0 등으로 사용자에게 표시하는 버전 이름
+        //  => 대규모패치.중간규모패치.소규모패치 => v8.8.1 같은 방식으로 표기
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    // buildTypes : 누가 못뜯어보게 하는 거
     buildTypes {
         release {
             minifyEnabled false
@@ -24,6 +32,10 @@ android {
     }
 
 }
+// dependencies : 프로젝트에서 사용하는 외부 라이브러리 명시 공간 (의존성 주입)
+// Ex. 원형 이미지뷰 사용하고싶음 -> gradle의 의존성으로 원형 이미지뷰 라이브러리 추가
+// 장점 1) 코드 한두줄만 복붙하면 해다 라이브러리가 내 프로젝트에 자동으로 설치 됨
+// 장점 2) Git에 푸시하고 클론 or Pull하는 과정의 속도 매우 향상
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -34,4 +46,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // 플레이 스토어처럼 어떤 프래그먼트를 보고 있는지 사용자에게 알려주고 해당 탭을 누르면 바로 그 프래그먼트로 이동
+    // 추가한 줄
+    implementation 'com.android.support:design:29.0.3'
+
+
+
 }
