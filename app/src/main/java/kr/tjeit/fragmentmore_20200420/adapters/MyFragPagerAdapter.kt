@@ -14,7 +14,7 @@ class MyFragPagerAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
         return when(position) {
             0 -> "메인"
             1 -> "게임 리스트"
-            else -> " 거래 게시판"
+            else -> "거래 게시판"
         }
     }
 
